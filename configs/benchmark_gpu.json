@@ -1,0 +1,7 @@
+{
+  "device_preference": "cuda",
+  "torch_dtype": "float16",
+  "warmup_runs": 2,
+  "measured_trials": 5,
+  "max_new_tokens": 24
+}
