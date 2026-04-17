@@ -1,0 +1,116 @@
+{
+  "config": {
+    "model_names": [
+      "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+    ],
+    "prompt_lengths": [
+      64,
+      128,
+      256
+    ],
+    "precisions": [
+      "float16",
+      "float32"
+    ],
+    "max_new_tokens": 24,
+    "warmup_runs": 1,
+    "measured_trials": 3,
+    "device_preference": "auto",
+    "save_dir": "results",
+    "system_name": "local_machine",
+    "estimated_bandwidth_gbps": null,
+    "use_kv_cache": true
+  },
+  "rows": [
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 64,
+      "precision": "float16",
+      "ttft_mean_ms": 117.93765298525493,
+      "per_token_mean_ms": 69.06231455094571,
+      "e2e_mean_ms": 1706.3708876570065,
+      "kv_cache_bytes_per_token": 22528,
+      "result_file": "results/single_benchmark_kv_on_20260416_234924.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 128,
+      "precision": "float16",
+      "ttft_mean_ms": 158.47172234455743,
+      "per_token_mean_ms": 68.96936291542606,
+      "e2e_mean_ms": 1744.7670693993568,
+      "kv_cache_bytes_per_token": 22528,
+      "result_file": "results/single_benchmark_kv_on_20260416_234932.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 256,
+      "precision": "float16",
+      "ttft_mean_ms": 206.92833332220712,
+      "per_token_mean_ms": 66.06523425855498,
+      "e2e_mean_ms": 1726.4287212689717,
+      "kv_cache_bytes_per_token": 22528,
+      "result_file": "results/single_benchmark_kv_on_20260416_234941.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 64,
+      "precision": "float32",
+      "ttft_mean_ms": 124.20923632383347,
+      "per_token_mean_ms": 75.77820596660392,
+      "e2e_mean_ms": 1867.107973555724,
+      "kv_cache_bytes_per_token": 45056,
+      "result_file": "results/single_benchmark_kv_on_20260416_234950.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float32",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 128,
+      "precision": "float32",
+      "ttft_mean_ms": 307.9270136555036,
+      "per_token_mean_ms": 96.19695172966391,
+      "e2e_mean_ms": 2520.4569034377732,
+      "kv_cache_bytes_per_token": 45056,
+      "result_file": "results/single_benchmark_kv_on_20260416_235003.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float32",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 256,
+      "precision": "float32",
+      "ttft_mean_ms": 315.270263671875,
+      "per_token_mean_ms": 92.05270888667177,
+      "e2e_mean_ms": 2432.4825680653253,
+      "kv_cache_bytes_per_token": 45056,
+      "result_file": "results/single_benchmark_kv_on_20260416_235016.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float32",
+        "effective_bandwidth_gbps": 120.0
+      }
+    }
+  ]
+}

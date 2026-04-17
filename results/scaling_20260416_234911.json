@@ -1,0 +1,254 @@
+{
+  "config": {
+    "model_names": [
+      "meta-llama/Llama-3.2-1B-Instruct",
+      "meta-llama/Llama-3.2-3B-Instruct",
+      "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+    ],
+    "prompt_lengths": [
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "precisions": [
+      "auto"
+    ],
+    "max_new_tokens": 24,
+    "warmup_runs": 1,
+    "measured_trials": 3,
+    "device_preference": "auto",
+    "save_dir": "results",
+    "system_name": "local_machine",
+    "estimated_bandwidth_gbps": null,
+    "use_kv_cache": true
+  },
+  "rows": [
+    {
+      "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+      "prompt_length_tokens": 16,
+      "precision": "auto",
+      "ttft_mean_ms": 76.0394579966863,
+      "per_token_mean_ms": 53.94328985352447,
+      "e2e_mean_ms": 1316.7351246277492,
+      "kv_cache_bytes_per_token": 32768,
+      "result_file": "results/single_benchmark_kv_on_20260416_234544.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+      "prompt_length_tokens": 32,
+      "precision": "auto",
+      "ttft_mean_ms": 89.20409697294235,
+      "per_token_mean_ms": 56.12935997092205,
+      "e2e_mean_ms": 1380.1793763041496,
+      "kv_cache_bytes_per_token": 32768,
+      "result_file": "results/single_benchmark_kv_on_20260416_234552.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+      "prompt_length_tokens": 64,
+      "precision": "auto",
+      "ttft_mean_ms": 125.2075560092926,
+      "per_token_mean_ms": 55.23877290107202,
+      "e2e_mean_ms": 1395.699332733949,
+      "kv_cache_bytes_per_token": 32768,
+      "result_file": "results/single_benchmark_kv_on_20260416_234559.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+      "prompt_length_tokens": 128,
+      "precision": "auto",
+      "ttft_mean_ms": 140.9651106595993,
+      "per_token_mean_ms": 53.93224214211754,
+      "e2e_mean_ms": 1381.4066799283028,
+      "kv_cache_bytes_per_token": 32768,
+      "result_file": "results/single_benchmark_kv_on_20260416_234607.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+      "prompt_length_tokens": 256,
+      "precision": "auto",
+      "ttft_mean_ms": 214.60347199440002,
+      "per_token_mean_ms": 56.430894899195515,
+      "e2e_mean_ms": 1512.514054675897,
+      "kv_cache_bytes_per_token": 32768,
+      "result_file": "results/single_benchmark_kv_on_20260416_234614.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "meta-llama/Llama-3.2-3B-Instruct",
+      "prompt_length_tokens": 16,
+      "precision": "auto",
+      "ttft_mean_ms": 149.1238056818644,
+      "per_token_mean_ms": 96.9761419598607,
+      "e2e_mean_ms": 2379.575070758661,
+      "kv_cache_bytes_per_token": 114688,
+      "result_file": "results/single_benchmark_kv_on_20260416_234635.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "meta-llama/Llama-3.2-3B-Instruct",
+      "prompt_length_tokens": 32,
+      "precision": "auto",
+      "ttft_mean_ms": 171.79365301132202,
+      "per_token_mean_ms": 97.89221799805544,
+      "e2e_mean_ms": 2423.314666966597,
+      "kv_cache_bytes_per_token": 114688,
+      "result_file": "results/single_benchmark_kv_on_20260416_234656.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "meta-llama/Llama-3.2-3B-Instruct",
+      "prompt_length_tokens": 64,
+      "precision": "auto",
+      "ttft_mean_ms": 248.610347310702,
+      "per_token_mean_ms": 99.16603797674179,
+      "e2e_mean_ms": 2529.429220775763,
+      "kv_cache_bytes_per_token": 114688,
+      "result_file": "results/single_benchmark_kv_on_20260416_234720.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "meta-llama/Llama-3.2-3B-Instruct",
+      "prompt_length_tokens": 128,
+      "precision": "auto",
+      "ttft_mean_ms": 322.7661389907201,
+      "per_token_mean_ms": 106.79348421615104,
+      "e2e_mean_ms": 2779.016275962194,
+      "kv_cache_bytes_per_token": 114688,
+      "result_file": "results/single_benchmark_kv_on_20260416_234747.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "meta-llama/Llama-3.2-3B-Instruct",
+      "prompt_length_tokens": 256,
+      "precision": "auto",
+      "ttft_mean_ms": 503.6305556694667,
+      "per_token_mean_ms": 105.50691600813381,
+      "e2e_mean_ms": 2930.2896238565445,
+      "kv_cache_bytes_per_token": 114688,
+      "result_file": "results/single_benchmark_kv_on_20260416_234825.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 16,
+      "precision": "auto",
+      "ttft_mean_ms": 103.17979164918263,
+      "per_token_mean_ms": 66.62102291463079,
+      "e2e_mean_ms": 1635.4633186856906,
+      "kv_cache_bytes_per_token": 22528,
+      "result_file": "results/single_benchmark_kv_on_20260416_234837.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 32,
+      "precision": "auto",
+      "ttft_mean_ms": 105.46537466843922,
+      "per_token_mean_ms": 65.86431824469912,
+      "e2e_mean_ms": 1620.344694296519,
+      "kv_cache_bytes_per_token": 22528,
+      "result_file": "results/single_benchmark_kv_on_20260416_234845.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 64,
+      "precision": "auto",
+      "ttft_mean_ms": 113.57302769025166,
+      "per_token_mean_ms": 75.24027355252832,
+      "e2e_mean_ms": 1844.0993193984032,
+      "kv_cache_bytes_per_token": 22528,
+      "result_file": "results/single_benchmark_kv_on_20260416_234854.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 128,
+      "precision": "auto",
+      "ttft_mean_ms": 144.94054132699966,
+      "per_token_mean_ms": 69.1653919271801,
+      "e2e_mean_ms": 1735.7445556521416,
+      "kv_cache_bytes_per_token": 22528,
+      "result_file": "results/single_benchmark_kv_on_20260416_234902.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    },
+    {
+      "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "prompt_length_tokens": 256,
+      "precision": "auto",
+      "ttft_mean_ms": 209.62793066104254,
+      "per_token_mean_ms": 69.74771610291107,
+      "e2e_mean_ms": 1813.8254010279973,
+      "kv_cache_bytes_per_token": 22528,
+      "result_file": "results/single_benchmark_kv_on_20260416_234911.json",
+      "runtime": {
+        "device": "mps",
+        "dtype": "float16",
+        "effective_bandwidth_gbps": 120.0
+      }
+    }
+  ]
+}

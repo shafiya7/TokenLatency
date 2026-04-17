@@ -8,7 +8,7 @@ labels = [
     "Framework"
 ]
 
-values = [40, 25, 20, 5, 10]  # replace with your actual numbers
+values = [40, 25, 20, 5, 10] 
 
 plt.figure()
 plt.pie(values, labels=labels, autopct='%1.1f%%')

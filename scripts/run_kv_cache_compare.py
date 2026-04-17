@@ -45,7 +45,7 @@ def build_compare_payload(with_cache: dict[str, Any], without_cache: dict[str, A
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Benchmark Hugging Face decoding with and without KV cache.")
-    parser.add_argument("--model", default="TinyLlama/TinyLlama-1.1B-Chat-v1.0")
+    parser.add_argument("--model", default="meta-llama/Llama-3.2-1B-Instruct")
     parser.add_argument("--prompt", default="Explain how KV cache reduces autoregressive decoding latency in LLaMA.")
     parser.add_argument("--max-new-tokens", type=int, default=24)
     parser.add_argument("--warmup-runs", type=int, default=1)

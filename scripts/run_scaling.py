@@ -15,7 +15,7 @@ from bench.scaling import run_scaling
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description='Run Goal 3 scaling study across prompt length, model size, and precision.')
-    parser.add_argument('--models', nargs='*', default=[META_LLAMA_VARIANTS[2], META_LLAMA_VARIANTS[0], META_LLAMA_VARIANTS[1]], help='Model names to benchmark.')
+    parser.add_argument('--models', nargs='*', default=[META_LLAMA_VARIANTS[0], META_LLAMA_VARIANTS[1], META_LLAMA_VARIANTS[2]], help='Model names to benchmark.')
     parser.add_argument('--prompt-lengths', nargs='*', type=int, default=[16, 32, 64, 128, 256], help='Prompt lengths in tokens.')
     parser.add_argument('--precisions', nargs='*', default=['auto'], help='Torch dtypes to sweep, e.g. auto float16 float32 bfloat16.')
     parser.add_argument('--max-new-tokens', type=int, default=24)

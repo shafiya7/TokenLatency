@@ -36,7 +36,7 @@ def main() -> None:
     run("analysis/goal2_report.py")
     run("analysis/goal3_report.py")
     run("analysis/kv_cache_model.py")
-    run("analysis/kv_cache_report.py")
+    # run("analysis/kv_cache_report.py")
     run("analysis/report_builder.py")
 
     # Goal 5
