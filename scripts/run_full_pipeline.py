@@ -17,7 +17,7 @@ def main() -> None:
     print("\nStarting full benchmark + analysis pipeline\n")
 
     # Goal 1
-    run("scripts/run_single.py")
+    # run("scripts/run_single.py")
 
     # Goal 2 / KV cache / decomposition support
     run("scripts/run_kv_cache_validation.py")
@@ -46,7 +46,7 @@ def main() -> None:
     run("analysis/plot_latency_pie.py")
     run("analysis/plot_token_latency_trend.py")
 
-    run("scripts/run_scaling.py")
+    # run("scripts/run_scaling.py")
     run("analysis/plot_scaling.py")
 
     

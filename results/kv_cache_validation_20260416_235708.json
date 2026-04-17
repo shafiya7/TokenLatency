@@ -1,0 +1,27 @@
+{
+  "comparison_type": "kv_cache_on_vs_off",
+  "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+  "runtime_note": "Same prompt and generation settings, only use_kv_cache changes.",
+  "kv_cache_estimation_note": "KV-cache transfer time is estimated analytically from bytes moved and an effective bandwidth value; it is not directly isolated by a hardware profiler.",
+  "kv_on": {
+    "saved_to": "results/single_benchmark_kv_on_20260416_235659.json",
+    "ttft_ms_mean": 78.86391701300938,
+    "avg_per_token_ms_mean": 54.76504531304042,
+    "e2e_ms_mean": 900.3395967086157
+  },
+  "kv_off": {
+    "saved_to": "results/single_benchmark_kv_off_20260416_235708.json",
+    "ttft_ms_mean": 102.20083336035411,
+    "avg_per_token_ms_mean": 108.10672784116532,
+    "e2e_ms_mean": 1723.801750977834
+  },
+  "measured_delta_ms": {
+    "ttft_ms": 23.336916347344726,
+    "avg_per_token_ms": 53.341682528124906,
+    "e2e_ms": 823.4621542692183
+  },
+  "interpretation": {
+    "positive_delta_means_kv_cache_helped": true,
+    "note": "This is a direct end-to-end measurement of the benefit of enabling KV-cache. It does not isolate pure KV transfer time, but it validates that KV-cache materially affects latency."
+  }
+}
