@@ -58,15 +58,6 @@ TokenLatency/
 -  requirements.txt
 -  README.md
 
-
-
-- Time to First Token (TTFT)
-- Per-token latency
-- End-to-end latency
-- Impact of KV cache
-- Effect of precision (float32 vs float16)
-
-
 ---
 
 ## Setup
