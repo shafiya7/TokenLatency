@@ -44,17 +44,17 @@ The project is organized around five benchmark goals:
 
 
 TokenLatency/
-- analysis/         # analysis scripts and report generation
-- bench/            # benchmark harness, configs, and model registry
-- configs/          # model/config files
-- docs/             # generated findings and markdown reports
-- optimization/     # KV-cache optimization writeups and proposal code
-- plots/            # generated plots and visual summaries
--  profiling/        # breakdown data generation utilities
--  report/           # report-related assets
--  results/          # benchmark JSON outputs and CSV summaries
--  scripts/          # runnable experiment pipelines
--  streamlit_app.py  # interactive dashboard
+- analysis/         -  analysis scripts and report generation
+- bench/            -  benchmark harness, configs, and model registry
+- configs/          -  model/config files
+- docs/             -  generated findings and markdown reports
+- optimization/     -  KV-cache optimization writeups and proposal code
+- plots/            -  generated plots and visual summaries
+-  profiling/        -  breakdown data generation utilities
+-  report/           -  report-related assets
+-  results/          -  benchmark JSON outputs and CSV summaries
+-  scripts/          -  runnable experiment pipelines
+-  streamlit_app.py  -  interactive dashboard
 -  requirements.txt
 -  README.md
 
