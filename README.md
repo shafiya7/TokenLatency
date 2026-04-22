@@ -1,45 +1,138 @@
-# LLaMA Token Latency Benchmark Lab
+# Token-Generation Latency Benchmarking in LLaMA
 
-This project is organized around the five benchmark goals in the assignment:
+A benchmarking and analysis project for measuring **token generation latency** in LLMs such as **LLaMA** and **TinyLlama**.  
+This repo studies how latency changes with **model size**, **prompt length**, **precision**, and **KV-cache usage**, and provides both command-line workflows and a **Streamlit dashboard** for interactive comparison. 
 
-1. **Benchmark harness design**: repeatable TTFT, steady-state per-token, and end-to-end timing with warmups, multiple trials, and IQR outlier handling.
-2. **Latency decomposition**: stage-level timing hooks for embeddings, attention, MLP, layernorm, LM head, KV-cache transfer estimate, sampling/decoding, and framework overhead.
-3. **Scaling analysis**: prompt-length sweeps across at least two model variants, plus optional precision sweeps.
-4. **Architectural bottleneck analysis**: generated report and notes tying measured growth to memory traffic and decode-time bandwidth pressure.
-5. **Optimization proposal**: concrete KV-cache optimization writeup with before/after estimate and optional measured cache-vs-no-cache comparison.
+---
 
-## Main scripts
+## Project Goal
 
-- `python scripts/run_single.py`
-- `python scripts/run_kv_cache_compare.py`
-- `python scripts/run_scaling.py`
-- `python scripts/run_precision_sweep.py`
-- `python scripts/run_full_pipeline.py`
+The project is organized around five benchmark goals:
 
-## Outputs
+1. **Benchmark harness design**  
+   Measure:
+   - **TTFT (Time to First Token)**
+   - **Steady-state per-token latency**
+   - **End-to-end latency**
 
-- `results/single_benchmark_*.json`
-- `results/kv_cache_compare_*.json`
-- `results/scaling_*.json`
-- `results/breakdown_summary.csv`
-- `plots/*.png`
-- `plots/inflection_points.md`
-- `docs/generated_findings_report.md`
-- `optimization/KV_CACHE_OPTIMIZATION_PROPOSAL.md`
+   using warmup runs, repeated trials, and outlier handling.
 
-## Notes
+2. **Latency decomposition**  
+   Break token latency into major components such as:
+   - embedding
+   - attention
+   - MLP / feed-forward
+   - KV-cache transfer estimate
+   - sampling / decoding
+   - framework overhead
 
-- Use small/open models if gated Meta Llama weights are unavailable.
-- On Apple Silicon or consumer GPUs, `float16` is often the practical choice.
-- The decomposition is based on forward hooks and transfer estimates, so it is best treated as an attribution methodology for coursework rather than a hardware-counter-accurate microarchitectural model.
+3. **Scaling analysis**  
+   Study how latency changes across:
+   - multiple model sizes
+   - different prompt lengths
+   - different numeric precisions
+
+4. **Architectural bottleneck analysis**  
+   Connect measured latency growth to decoder-time compute and memory behavior.
+
+5. **Optimization proposal**  
+   Evaluate KV-cache related optimization ideas and estimate their effect on inference latency.
+
+---
+
+## Repository Structure
 
 
-## Goal 3 workflow
+TokenLatency/
+├── analysis/         # analysis scripts and report generation
+├── bench/            # benchmark harness, configs, and model registry
+├── configs/          # model/config files
+├── docs/             # generated findings and markdown reports
+├── optimization/     # KV-cache optimization writeups and proposal code
+├── plots/            # generated plots and visual summaries
+├── profiling/        # breakdown data generation utilities
+├── report/           # report-related assets
+├── results/          # benchmark JSON outputs and CSV summaries
+├── scripts/          # runnable experiment pipelines
+├── streamlit_app.py  # interactive dashboard
+├── requirements.txt
+└── README.md
 
-1. `python scripts/run_scaling.py --models TinyLlama/TinyLlama-1.1B-Chat-v1.0 meta-llama/Llama-3.2-1B-Instruct meta-llama/Llama-3.2-3B-Instruct --prompt-lengths 16 32 64 128 256 --precisions auto`
-2. `python scripts/run_precision_sweep.py`
-3. `python analysis/plot_scaling.py`
-4. `python analysis/goal3_report.py`
 
-This produces Goal 3 plots and markdown reports in `plots/` and `docs/`.
-# TokenLatency
+
+- Time to First Token (TTFT)
+- Per-token latency
+- End-to-end latency
+- Impact of KV cache
+- Effect of precision (float32 vs float16)
+
+---
+
+## Project Structure
+
+TokenLatency/
+├── analysis/
+├── bench/
+├── configs/
+├── docs/
+├── optimization/
+├── plots/
+├── profiling/
+├── results/
+├── scripts/
+├── streamlit_app.py
+├── requirements.txt
+└── README.md
+
+---
+
+## Setup
+
+### Create virtual environment
+python3.11 -m venv latency-env
+
+### Activate environment
+
+Mac/Linux:
+source latency-env/bin/activate
+
+
+### Install dependencies
+pip install -r requirements.txt
+
+---
+
+## Run Experiments
+
+### Run full pipeline
+python3.11 scripts/run_full_pipeline.py
+
+### Run single benchmark
+python3.11 scripts/run_single.py
+
+### Compare KV cache vs no cache
+python3.11 scripts/run_kv_cache_compare.py
+
+### Precision × KV cache experiment
+python3.11 scripts/run_precision_kv_matrix.py \
+  --model meta-llama/Llama-3.2-1B-Instruct \
+  --device auto \
+  --precisions float32 float16 \
+  --max-new-tokens 24 \
+  --warmup-runs 1 \
+  --measured-trials 3
+
+---
+
+## Run Streamlit Dashboard
+
+python3.11 -m streamlit run streamlit_app.py
+
+Open in browser:
+http://localhost:8501
+
+
+
+
+
+
