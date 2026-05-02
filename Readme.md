@@ -42,10 +42,12 @@ Token generation latency consists of three main components: **TTFT (Time to Firs
 
 ## Setup
 
-Create and activate a virtual environment, then install dependencies:
+**Create and activate a virtual environment, then install dependencies:**
 
 python3.11 -m venv latency-env  
+
 source latency-env/bin/activate
+
 pip install -r requirements.txt  
 
 ---
@@ -54,20 +56,21 @@ pip install -r requirements.txt
 
 You can run different experiments depending on your need:
 
-Run full pipeline: python3.11 scripts/run_full_pipeline.py  
+**Run full pipeline:**  python3.11 scripts/run_full_pipeline.py  
 
-Run single benchmark: python3.11 scripts/run_single.py  
+**Run single benchmark:** python3.11 scripts/run_single.py  
 
-Compare KV-cache vs no cache: python3.11 scripts/run_kv_cache_compare.py  
+**Compare KV-cache vs no cache** python3.11 scripts/run_kv_cache_compare.py  
 
-Run precision × KV-cache experiment:  
+**Run precision × KV-cache experiment:** 
+
 python3.11 scripts/run_precision_kv_matrix.py --model meta-llama/Llama-3.2-1B-Instruct --device auto --precisions float32 float16 --max-new-tokens 24 --warmup-runs 2 --measured-trials 3  
 
 ---
 
-## Dashboard
+##  Streamlit Dashboard
 
-Launch the Streamlit dashboard:
+**Launch the Streamlit dashboard:**
 
 python3.11 -m streamlit run streamlit_app.py  
 
